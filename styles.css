@@ -1,0 +1,143 @@
+:root {
+    --bg: #0d1117;
+    --text: #c9d1d9;
+    --sub: #8b949e;
+    --border: #30363d;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin: 3rem auto 2rem;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--sub);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 90vw;
+    max-width: 780px;
+    margin: 0 auto 2rem;
+}
+
+.stat-card {
+    background: #161b22;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--sub);
+}
+
+@media (max-width: 600px) {
+    .stats-container {
+        gap: .5rem;
+    }
+    .stat-card {
+        padding: .75rem;
+    }
+    .stat-value {
+        font-size: 1.25rem;
+    }
+}
+
+.years-container {
+    width: 90vw;
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--bg);
+}
+
+.year-section {
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.year-header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.graph-wrapper {
+    display: flex;
+    overflow-x: auto;
+}
+
+.main-graph-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(53, 14px);
+    grid-template-rows: repeat(5, 14px);
+    grid-auto-flow: row;
+}
+
+.day-cell {
+    width: 10px;
+    height: 10px;
+    background: #161b22;
+    border-radius: 2px;
+    outline: 1px solid rgba(27, 31, 35, 0.06);
+    outline-offset: -1px;
+}
+
+.day-cell:hover {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    position: relative;
+}
+
+.tooltip {
+    position: fixed;
+    background: #24292f;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+}
+
+.level-0 { background: #161b22; }
+.level-4 { background: #39d353; }

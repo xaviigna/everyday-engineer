@@ -5,7 +5,7 @@ const WORKER = 'https://everyday-engineer.xavierbenavidesm.workers.dev';
     let html = '', totalEx = 0, remaining = 0;
     const now = new Date(); // Current time for comparison
     
-    for (let y = 2026; y <= 2030; y++) {
+    for (let y = 2026; y <= 2029; y++) {
         html += `<div class="year-section"><div class="year-header">${y} Contributions</div><div class="graph-wrapper"><div class="main-graph-area"><div class="contribution-grid">`;
         
         for (let d = new Date(y, 0, 1); d.getFullYear() === y; d.setDate(d.getDate() + 1)) {
